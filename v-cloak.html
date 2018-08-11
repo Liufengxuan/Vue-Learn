@@ -1,0 +1,32 @@
+
+    <!--<script src="vue1026.js"></script>-->
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="utf-8">
+        <title>Vue </title>
+         
+		 <style>
+			[v-cloak]{
+				display:none;
+			}
+		 </style>
+    </head>
+    <body>
+	
+        <div id="app">
+			<span v-cloak>{{name}}</span>  <!--加载完后会删除[v-cloak] 这个css-->
+        </div>
+ </body>
+<script src="vue1026.js"></script>
+        <script>
+            new Vue({
+                el: '#app',
+                data: {             
+					name:'lfxhtml'
+                }
+            });
+        </script>
+   
+	
+</html>

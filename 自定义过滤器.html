@@ -1,0 +1,35 @@
+
+    <!--<script src="vue1026.js"></script>-->
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="utf-8">
+        <title>Vue </title>
+         <script src="vue1026.js"></script>
+		
+    </head>
+    <body>
+	
+        <div id="app">
+		{{time|datefmt}}
+        </div>
+ </body>
+        <script>
+            var v=new Vue({
+                el: '#app',
+                data: {
+                   time:new Date()
+                },
+				methods:{
+					
+					},
+				filters:{
+					datefmt:function(input){
+						//将input的值格式化成yyyy-mm-dd输出。
+						var res='';
+						var date =new Date(input)
+					}
+				}
+            });
+        </script>
+</html>

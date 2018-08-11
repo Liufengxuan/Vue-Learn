@@ -1,0 +1,93 @@
+
+    <!--<script src="vue1026.js"></script>-->
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="utf-8">
+        <title>Vue </title>
+         <script src="vue1026.js"></script>
+		 <style>
+			#tb{
+				width:800px;
+				border-collapse:collapse;
+				margin:20px auto;
+			}
+			#tb th{
+				background-color:blue;
+				color:white;
+				font-size:16px;
+				padding:5px;
+				text-align:center;
+				border:1px solid black;
+			}
+			#tb td{
+				font-size:14px;
+				padding:5px;
+				text-align:center;
+				border:1px solid black;
+			}
+		 </style>
+    </head>
+    <body>
+	
+        <div id="app">
+		<input type="text" v-model="id">
+		<input type="text" v-model="name">
+		<input type="text" v-model="ctime">
+		<button  @click="addData">添加</button>
+         <table id="tb">
+			<tr>
+				<th>编号</th>
+				<th>姓名</th>
+				<th>密码</th>
+				<th>时间</th>
+				<th>操作</th>
+			</tr> 
+			<tr v-show="user.length==0">
+				<td colspan="5">无数据</td>
+			</tr> 
+			
+			<tr v-for="item in user"> 
+				<td>{{item.id}}</td>
+				<td>{{item.name}}</td>
+				<td>{{item.pwd}}</td>
+				<td>{{item.date}}</td>
+				<td><a @click="delData(item.id)" href="javascript:void(0)">删除</a></td>
+			</tr>
+		 
+		 </table>
+		  
+        </div>
+ </body>
+        <script>
+            var v=new Vue({
+                el: '#app',
+                data: {
+                    id:"",
+					name:"",
+					ctime:"",
+					user:[
+					{id:2,name:'lfx',pwd:'123',date:new Date},
+					{id:32,name:'ada',pwd:'123',date:new Date}					
+					]
+                },
+				methods:{
+					addData:function(){
+						var p={id:this.id,name:this.name,pwd:"admin",date:new Date()};
+						this.user.push(p);
+						this.id="";
+						this.name="";
+						this.ctime=""
+					},
+						delData:function(id){
+						if (!confirm('是否删除数据？')){
+						return ;
+						}
+						var index=this.user.findIndex(function(item){return item.id==id});
+						
+						this.user.splice(index,1)
+					}
+				}			
+            });
+        </script>
+</html>

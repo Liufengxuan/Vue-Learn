@@ -1,0 +1,33 @@
+
+    <!--<script src="vue1026.js"></script>-->
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="utf-8">
+        <title>Vue </title>
+        <script src="vue1026.js"></script>
+    </head>
+    <body>
+        <div id="app">
+		<button v-on:click="toggle"></button>
+            <p v-if="isshow">{{ message }}</p>		<!---通过移除隐藏此标签-->
+			<p v-show="isshow">{{ message }}</p>   <!---通过添加style来隐藏此标签-->
+        </div>
+
+        <script>
+            new Vue({
+                el: '#app',
+                data: {
+					message:"lfx",
+                  isshow:false
+                },
+				methods:{
+					toggle:function(){
+							this.isshow=!this.isshow;		
+							$el.button.innertext="asda";
+					}
+				}
+            });
+        </script>
+    </body>
+</html>

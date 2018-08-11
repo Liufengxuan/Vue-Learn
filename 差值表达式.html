@@ -1,0 +1,34 @@
+
+    <!--<script src="vue1026.js"></script>-->
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="utf-8">
+        <title>Vue </title>
+        
+    </head>
+    <body>
+	
+        <div id="app">
+            <p>{{ message +'1'}}</p>
+			
+			{{if1(message)}}
+        </div>
+ </body>
+ <script src="vue1026.js"></script>
+        <script>
+            new Vue({
+                el: '#app',
+                data: {
+                    message: 'Hello Vue.js!'
+                },
+				methods:{
+					if1:function (str){
+						return str ='return str =="wowo"'
+					}
+				}
+            })
+        </script>
+   
+	
+</html>

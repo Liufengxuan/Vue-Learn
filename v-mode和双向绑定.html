@@ -1,0 +1,42 @@
+
+    <!--<script src="vue1026.js"></script>-->
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="utf-8">
+        <title>Vue </title>
+        
+    </head>
+    <body>
+	
+        <div id="app">
+          <input type="text" v-model="message"/>
+		  
+		  <input type="text" v-model="user.name"/>
+		  <input type="password" v-model="user.pwd"/>
+		  <button v-on:click="sbmt">提交</button>
+		  
+        </div>
+ </body>
+ <script src="vue1026.js"></script>
+        <script>
+            var v=new Vue({
+                el: '#app',
+                data: {
+                    message: 'Hello Vue.js!',
+					user:{name:'lfx',pwd:''}
+                },
+				methods:{
+					if1:function (str){
+						return str ='return str =="wowo"'
+					},
+					sbmt:function(){
+						alert(this.user.name+" / " +this.user.pwd)
+					}
+					
+				}
+            })
+        </script>
+   
+	
+</html>

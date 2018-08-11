@@ -1,0 +1,63 @@
+
+    <!--<script src="vue1026.js"></script>-->
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="utf-8">
+        <title>Vue </title>
+         <script src="vue1026.js"></script>
+         <script src="vue-router.js"></script>
+		
+    </head>
+    <body>
+        <div id="app">
+         <router-link to="/login">登陆</router-link>
+        <router-link to="/register/lfx">登陆</router-link>
+        <router-view></router-view>
+        </div>
+ </body>
+        <script>
+            //开始路由代码编写。
+            //定义根组件
+          var App=Vue.extend({});
+
+
+          ////定义登陆组件m
+          var login=Vue.extend({
+             template:'<div>登陆</div>'
+          });
+
+          //定义注册组件
+          var register=Vue.extend({
+            template:'<div>注册{{name}}</div>',
+            data:function(){
+                return{
+                    name:'',
+                }
+            },
+            created:function(){
+                this.name=this.$route.params.name
+            }
+          });
+
+          //实例化路由规则对象
+          var router=new VueRouter({
+            routes:[
+                {path:'/login',component:login},
+                {path:'/register/:name',component:register}
+            ]
+          });
+
+          //开启路由对象
+          new Vue({
+            el:'#app',
+            router:router,//开启路由对象
+            watch:{
+              '$route':function(n,o){
+                console.log(n,o);
+
+              }
+            }
+          });
+        </script>
+</html>

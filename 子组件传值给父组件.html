@@ -1,0 +1,43 @@
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="utf-8">
+        <title>Vue </title>
+         <script src="vue1026.js"></script>		
+    </head>
+    <body>
+        <template id="sub">
+            <div>
+            <button @click="senddata">123123</button>
+           </div>  
+        </template>
+	
+        <div id="app">
+		<ttt v-on:send="getdata"></ttt>
+        </div>
+ </body>
+        <script>
+            var v=new Vue({
+                el: '#app',
+                data:{
+                    id:100
+                },
+                methods:{
+                    getdata:function(d){
+                        alert(d);
+                    }
+                },
+                components:{
+                    'ttt':{
+                        template:'#sub',
+                        methods:{
+                            senddata:function(){
+                                this.$emit('send','hello');
+                            }
+                        }
+                       
+                    }
+                }				
+            });
+        </script>
+</html>

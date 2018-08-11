@@ -1,0 +1,39 @@
+
+    <!--<script src="vue1026.js"></script>-->
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="utf-8">
+        <title>Vue </title>
+        
+    </head>
+    <body>
+	
+        <div id="app">
+         <ul>
+			<li v-for="item1 in list2">{{$item1}}，，{{item1}}</li>
+			<!-- <li v-for="(item3,index3) in list2" :key="index3">下标为{{index3}},值为{{item3}}</li>  --><!-- vue1.0是索引在前，值在后 -->
+			<li v-for="(item7,index7) in list2" :key="index7">下标为{{index7}},值为{{item7}}</li><!--1.0track-by="$index3"消除重复警告，2.0用   :key="index3"-->
+			
+			
+			
+			<!--打印 对象-->
+			<li v-for="(item4,title4) in user">{{title4}}={{item4}}</li><!-- vue1.0是索引在前，值在后 -->
+			<li v-for="(item5,index5,title5) in user">{{index5}}:{{title5}}={{item5}}</li><!-- vue2.0写法 -->
+		 </ul>
+		  
+        </div>
+ </body>
+ <script src="vue1026.js"></script>
+        <script>
+            var v=new Vue({
+                el: '#app',
+                data: {
+                    message: 'Hello Vue.js!',
+					list2:[1,2,3,4,4,4],
+					user:{name:'lfx',pwd:'123'}
+                }
+				
+            });
+        </script>
+</html>
