@@ -1,0 +1,46 @@
+
+    <!--<script src="vue1026.js"></script>-->
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="utf-8">
+        <title>Vue </title>
+         <script src="vue1026.js"></script>
+         <script src="vue-router.js"></script>
+    
+    </head>
+    <body>
+        <div id="app">
+          <input type="text" v-model="firstName">
+          <input type="text" v-model="lastName">
+          <h1>{{fullName}}<h1>
+        </div>
+ </body>
+<script>
+  new Vue({
+    el:'#app',
+    data:{
+      firstName:'l',
+      lastName:'fx',
+    },
+    //将fullName变为一个自动计算属性
+    /*
+		特点：
+		1.计算属性会依赖于他使用的data中的属性，只要是依赖的属性值有
+			改变，则自动重新调用一下计算属性
+
+		2.会使用缓存。
+		如果它所依赖的这些属性值没有发生改变，那么计算属性的值
+		是从缓存中来的，而不是重新编译，那么性能要高一些，所以vue中尽可能
+		使用computed 而不是watch。
+
+    */
+    computed:{
+      fullName:function(){
+         return this.firstName+this.lastName;
+      }
+    }
+  })
+      
+</script>
+</html>
