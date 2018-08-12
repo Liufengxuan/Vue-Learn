@@ -1,0 +1,12 @@
+-->安装node.js环境
+
+
+-->翻墙
+-->安装nrm 
+      -->   npm install nrm -g 
+ 
+
+
+-->改变npm下载源
+      --> nrm ls 查看源列表
+      --> nrm use taobao 切换到国内淘宝源。
