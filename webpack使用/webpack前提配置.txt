@@ -10,3 +10,20 @@
 -->改变npm下载源
       --> nrm ls 查看源列表
       --> nrm use taobao 切换到国内淘宝源。
+
+-------->打包js
+	-->                源文件    目标文件
+	-->webpack main.js  build.js
+
+
+-------->或者定义一个webpack.config.js 来配置打包设置
+	-->
+	module.exports={
+	entry:'./src/main.js',                         //源文件路径。
+	output:{
+		path:__dirname+'/dist',      //目标路径 //dist 需要绝对路径。
+		filename:'build.js'	         //目标文件名。
+		}
+	   }
+	-->
+

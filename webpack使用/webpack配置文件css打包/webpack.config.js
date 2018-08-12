@@ -3,5 +3,17 @@ module.exports={
 	output:{
 		path:__dirname+'/dist',       //dist 需要绝对路径。
 		filename:'build.js'
+	},
+	module:{
+		loaders:[
+			{
+				test:/\.css$/,
+				loader:'style-loader!css-loader'
+			},
+			{
+				test:/\.scss$/,
+				loader:'style-loader!css-loader!sass-loader'
+			}
+		]
 	}
 }

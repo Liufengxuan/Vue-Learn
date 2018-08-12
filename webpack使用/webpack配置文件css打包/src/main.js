@@ -5,6 +5,9 @@ var bt=document.querySelector('#bt');
 var rst=document.querySelector('#rst');
 
 
+//2.0导入site.css文件
+require('../static/site.css');
+require('../static/siteV2.scss')
 
 //获取calc的add方法。
 bt.onclick=function(){
